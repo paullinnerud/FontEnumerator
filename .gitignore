@@ -27,6 +27,7 @@ Thumbs.db
 
 # Test artifacts
 *.png
+!docs/*.png
 *.log
 *.zip
 
