@@ -8,6 +8,9 @@ on:
   pull_request:
     branches: [ main, master ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: windows-latest
@@ -32,5 +35,3 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: bin/x64/Release/FontEnum.exe
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
