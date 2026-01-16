@@ -1,0 +1,38 @@
+# Build artifacts
+/bin/
+/obj/
+/x64/
+/Debug/
+/Release/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.db
+*.opendb
+*.aps
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+*.png
+*.log
+*.zip
+
+# Claude Code settings
+.claude/
+
+# Miscellaneous
+*.ps1
+nul
