@@ -3,6 +3,8 @@ name: Build
 on:
   push:
     branches: [ main, master ]
+    tags:
+      - 'v*'
   pull_request:
     branches: [ main, master ]
 
@@ -25,21 +27,8 @@ jobs:
         name: FontEnum-windows-x64
         path: bin/x64/Release/FontEnum.exe
 
-  release:
-    needs: build
-    runs-on: windows-latest
-    if: startsWith(github.ref, 'refs/tags/')
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v2
-
-    - name: Build Release
-      run: msbuild FontEnum.vcxproj /p:Configuration=Release /p:Platform=x64
-
     - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
       with:
         files: bin/x64/Release/FontEnum.exe
